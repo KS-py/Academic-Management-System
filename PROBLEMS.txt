@@ -1,0 +1,10 @@
+AFTER RUNNING "python manage.py makemigrations"
+
+ raise ImproperlyConfigured(msg.format(name=self.urlconf_name)) 
+from e
+django.core.exceptions.ImproperlyConfigured:
+ The included URLconf '<module 'student_management_app.urls' from 'D:\\Documents\\Some_Django, Flask and FastAPI\\DJANGO\\College Management System\\student_management_project\\student_management_app\\urls.py'>' 
+does not appear to have any patterns in it. 
+If you see the 'urlpatterns' variable with valid patterns in the file then the issue is probably caused by a circular import.
+
+SOLVED: Remove the path('admin/', admin.site.urls), from the application urls.py file, and changed the url_patterns list in the urls.py (application one) to urlpatterns
